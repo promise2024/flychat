@@ -7,7 +7,6 @@ const { memo, useState } = React;
 const CreateRobot = () => {
   const [show, setShow] = useState(false)
   const [audioShow, setAudioShow] = useState(false)
-  const [, forceUpdate] = useState({})
   const [fileList, setFileList] = useState([])
   const [actions] = useState([
     { name: '中文' },
@@ -131,7 +130,6 @@ const CreateRobot = () => {
         onSelect={(e) => {
           console.info(e.detail.name);
           formIt.setFieldsValue('language', e.detail.name);
-          forceUpdate(e);
           setShow(false);
         }}
       />
@@ -143,7 +141,6 @@ const CreateRobot = () => {
         onSelect={(e) => {
           console.info(e.detail.name);
           formIt.setFieldsValue('audio', e.detail.name);
-          forceUpdate(e);
           setAudioShow(false);
         }}
       />

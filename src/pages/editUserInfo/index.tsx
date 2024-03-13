@@ -11,7 +11,6 @@ const EditUserInfo = () => {
     minDate: new Date(1950, 0, 1).getTime(),
     currentDate: new Date(2024, 0, 1).getTime(),
   })
-  const [, forceUpdate] = useState({})
   const [fileList, setFileList] = useState([])
   const [actions] = useState([
     { name: '男' },
@@ -147,7 +146,6 @@ const EditUserInfo = () => {
         onSelect={(e) => {
           console.info(e.detail.name);
           formIt.setFieldsValue('sex', e.detail.name);
-          forceUpdate(e);
           setShow(false);
         }}
       />
